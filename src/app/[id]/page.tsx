@@ -44,14 +44,23 @@ export default function CatDetail({ params }: { params: Promise<{ id: string }> 
       </Link>
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div {...handlers} className="relative h-[70vh] bg-gray-100">
-          <Image
-            src={image.imageUrl}
-            alt={image.title}
-            fill
-            className="object-contain p-4"
-            sizes="100vw"
-            priority
-          />
+          {image.type === 'video' ? (
+            <video
+              src={image.mediaUrl}
+              className="w-full h-full object-contain"
+              controls
+              playsInline
+            />
+          ) : (
+            <Image
+              src={image.mediaUrl}
+              alt={image.title}
+              fill
+              className="object-contain p-4"
+              sizes="100vw"
+              priority
+            />
+          )}
           {/* 모바일에서만 표시되는 네비게이션 버튼 */}
           <div className="md:hidden absolute top-1/2 left-4 right-4 flex justify-between transform -translate-y-1/2">
             <button
