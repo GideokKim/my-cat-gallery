@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSwipeable } from 'react-swipeable';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { use } from 'react';
 import { images } from '@/data/images';
 
