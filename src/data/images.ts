@@ -19,7 +19,7 @@ export const images: CatImage[] = [
     id: '3',
     title: '엄마 일하지 말라고 방해하는 다미',
     description: '엄마 일하지 말라고 방해하는 다미',
-    imageUrl: '/images/2025-04-00-dami.jpg',
+    imageUrl: '/images/2025-04-08-dami.jpg',
     date: '2025-04-08'
   },
   {
