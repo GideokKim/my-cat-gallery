@@ -8,15 +8,9 @@ import { use } from 'react';
 import { images } from '@/data/images';
 
 export default function CatDetail({ params }: { params: Promise<{ id: string }> }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const resolvedParams = use(params);
-
-  useEffect(() => {
-    const index = images.findIndex(img => img.id === resolvedParams.id);
-    if (index !== -1) {
-      setCurrentIndex(index);
-    }
-  }, [resolvedParams.id]);
+  const initialIndex = images.findIndex(img => img.id === resolvedParams.id);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
